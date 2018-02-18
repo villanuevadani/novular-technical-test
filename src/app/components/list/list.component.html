@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row search-bar-row">
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" id="search-input" placeholder="Search users"
+        [(ngModel)]="this.searchWord" name="search-field" (ngModelChange)="this.searchUser()">
+      </div>
+    </form>
+  </div>
+  <div class="row" *ngIf="filteredUsers.length > 0; else emptyResultsMessage">
+      <app-list-item *ngFor="let user of filteredUsers" [user]="user" class="col-md-4"
+      (click)="this.openUserProfile(user)">
+      </app-list-item>
+  </div>
+  <ng-template #emptyResultsMessage>
+    <div class="row">
+      Your search does not match any result, or there are less than 3 characters in the search bar
+    </div>
+  </ng-template>
+</div>
