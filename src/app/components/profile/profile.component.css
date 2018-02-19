@@ -9,3 +9,11 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+@media (max-width: 577px) {
+    .profile-picture-in-profile{
+        height: 70px;
+        width: 70px;
+        float: right;
+    }
+}
