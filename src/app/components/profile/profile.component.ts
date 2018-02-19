@@ -9,8 +9,9 @@ import { DataService } from './../../services/data.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user: Object = null;
+  user;
   userRepos;
+  userFollowers;
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }  
 
@@ -28,6 +29,7 @@ export class ProfileComponent implements OnInit {
           this.dataService.setSelectedUser(response);
           this.user = response;
           this.getUserRepos(userName);
+          this.getUserFollowers(userName);
       },
       error => this.goToSearchScreen()
     );
@@ -37,6 +39,14 @@ export class ProfileComponent implements OnInit {
     this.dataService.getUserRepos(userName).subscribe(
       response => {
         this.userRepos = response;
+      }
+    );
+  }
+
+  getUserFollowers(userName: string){
+    this.dataService.getUserFollowers(userName).subscribe(
+      response => {
+        this.userFollowers = response;
       }
     );
   }

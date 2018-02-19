@@ -1,4 +1,5 @@
 export const Endpoints = {
   gitHubUsers: 'https://api.github.com/users',
-  userReposKeywords: '/repos'
+  userReposKeywords: '/repos',
+  userFollowersKeywords: '/followers'
 };

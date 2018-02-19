@@ -27,6 +27,10 @@ export class DataService {
     return this.http.get(Endpoints.gitHubUsers + '/' + userName + Endpoints.userReposKeywords);
   }
 
+  getUserFollowers(userName: string){
+    return this.http.get(Endpoints.gitHubUsers + '/' + userName + Endpoints.userFollowersKeywords);
+  }
+
   filterUsers(searchWord) {
     return this.usersArray.filter(user => user.login.includes(searchWord));
   }

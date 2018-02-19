@@ -22,7 +22,15 @@
             <li class="list-group-item">Blog: 
               <a target="_top" [href]="user?.blog">{{user?.blog}}</a>
             </li>
-          </ul>      
+          </ul>
+
+        <h3 class="margin-for-when-1-col">Followers list</h3>
+          <ul class="list-group">
+            <li *ngFor="let follower of userFollowers" class="list-group-item">
+              <a target="_top" [href]="follower.html_url">{{follower.login}}</a>
+            </li>
+        </ul>
+        
     </div>
     <div class="col-md-6 margin-for-when-1-col">
       <h3>Repositories</h3>
@@ -31,7 +39,7 @@
               <a target="_top" [href]="repo.html_url">{{repo.name}}</a>
             </li>
           </ul>
-    </div>            
+    </div>         
   </div>
   
   <div class="row footer-button-row">
