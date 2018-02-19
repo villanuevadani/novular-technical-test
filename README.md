@@ -2,7 +2,9 @@
 
 The app behavior is simple: just start typing on the search bar and in case there is any user that matches the word in the box, it will automatically show up.
 
-Once you have results displayed, you can click on a user and see the user's profile with some basic data, the repos and the followers of that user. At the bottom of the page you can also go back to the search screen in order to search for some other users.
+Once you have results displayed, you can click on a user and see the user's profile with some basic data, the repos and the followers of that user. You can click on either the blog, the page, any follower or any repository in order to navigate to its URL.
+
+At the bottom of the page you can also go back to the search screen in case you wanted to look for any other user.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
 
