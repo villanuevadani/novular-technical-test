@@ -1,4 +1,4 @@
-# NovularApp
+# Nuvolar App
 
 You can access the app here: [LINK](https://nuvolar-app.firebaseapp.com/) 
 
