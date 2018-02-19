@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-// import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 import { RouterModule } from '@angular/router';
 
 import { appRoutes } from './appRoutes';
@@ -28,7 +28,6 @@ import { ProfileComponent } from './components/profile/profile.component';
     RouterModule.forRoot(
       appRoutes
     )
-    // BsDropdownModule.forRoot()
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

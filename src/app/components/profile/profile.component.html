@@ -10,36 +10,38 @@
   </div>
   
   <div class="row">
-    <div class="col-md-6 margin-for-when-1-col">
-      <h3>User details</h3>
-        <ul class="list-group">
-            <li class="list-group-item">Name: {{user?.name}}</li>
-            <li class="list-group-item">GitHub Page:             
-              <a target="_top" [href]="user?.html_url">{{user?.html_url}}</a>
-            </li>
-            <li class="list-group-item">Followers: {{user?.followers}}</li>
-            <li class="list-group-item">Following: {{user?.following}}</li>
-            <li class="list-group-item">Blog: 
-              <a target="_top" [href]="user?.blog">{{user?.blog}}</a>
-            </li>
-          </ul>
 
-        <h3 class="margin-for-when-1-col">Followers list</h3>
-          <ul class="list-group">
-            <li *ngFor="let follower of userFollowers" class="list-group-item">
-              <a target="_top" [href]="follower.html_url">{{follower.login}}</a>
-            </li>
-        </ul>
-        
+    <div class="col-md-6 margin-for-when-1-col">
+      <h3>User details</h3>    
+      <ul class="list-group">
+        <li class="list-group-item">Name: {{user?.name}}</li>
+        <li class="list-group-item">GitHub Page:             
+          <a [href]="user?.html_url">{{user?.html_url}}</a>
+        </li>
+        <li class="list-group-item">Followers: {{user?.followers}}</li>
+        <li class="list-group-item">Following: {{user?.following}}</li>
+        <li class="list-group-item">Blog: 
+          <a [href]="user?.blog">{{user?.blog}}</a>
+        </li>
+      </ul>
+
+      <h3 class="margin-for-when-1-col">Followers list</h3>
+      <ul class="list-group">
+        <li *ngFor="let follower of userFollowers" class="list-group-item">
+          <a [href]="follower.html_url">{{follower.login}}</a>
+        </li>
+      </ul>  
     </div>
+
     <div class="col-md-6 margin-for-when-1-col">
       <h3>Repositories</h3>
-        <ul class="list-group">
-            <li *ngFor="let repo of userRepos" class="list-group-item">
-              <a target="_top" [href]="repo.html_url">{{repo.name}}</a>
-            </li>
-          </ul>
-    </div>         
+      <ul class="list-group">
+        <li *ngFor="let repo of userRepos" class="list-group-item">
+          <a [href]="repo.html_url">{{repo.name}}</a>
+        </li>
+      </ul>
+    </div>    
+
   </div>
   
   <div class="row footer-button-row">
@@ -49,5 +51,3 @@
   </div>
 
 </ng-container>
-
-

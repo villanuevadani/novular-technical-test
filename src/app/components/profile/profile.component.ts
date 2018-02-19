@@ -26,13 +26,17 @@ export class ProfileComponent implements OnInit {
   getUser(userName: string){
     this.dataService.loadGitHubSpecificUser(userName).subscribe(
       response => {
-          this.dataService.setSelectedUser(response);
-          this.user = response;
+          this.setUser(response);
           this.getUserRepos(userName);
           this.getUserFollowers(userName);
       },
       error => this.goToSearchScreen()
     );
+  }
+
+  setUser(user: Object){
+    this.dataService.setSelectedUser(user);
+    this.user = user;
   }
 
   getUserRepos(userName: string){
