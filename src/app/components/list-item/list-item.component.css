@@ -5,3 +5,7 @@
 .vertically-centered{
   line-height: 65px
 }
+
+img.profile-pic{
+  float: right;
+}
