@@ -18,16 +18,25 @@ export class DataService {
     );
   }
 
+  loadGitHubSpecificUser(userName: string){
+    let fullURL = Endpoints.gitHubUsers + '/' + userName;
+    return this.http.get(fullURL);
+  }
+
+  getUserRepos(userName: string){
+    return this.http.get(Endpoints.gitHubUsers + '/' + userName + Endpoints.userReposKeywords);
+  }
+
   filterUsers(searchWord) {
     return this.usersArray.filter(user => user.login.includes(searchWord));
   }
 
-  getUsersArray() {
-    return this.usersArray;
-  }
-
   setSelectedUser(user) {
     this.selectedUser = user;
+  }
+
+  getSelectedUser() {
+    return this.selectedUser;
   }
 
 }

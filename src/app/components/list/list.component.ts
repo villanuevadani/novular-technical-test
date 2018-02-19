@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { DataService } from './../../services/data.service';
 
@@ -11,7 +12,7 @@ export class ListComponent implements OnInit {
   searchWord: string;
   filteredUsers = [];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
     this.dataService.loadGitHubUsers();
@@ -27,8 +28,7 @@ export class ListComponent implements OnInit {
 
   openUserProfile(user: Object) {
     this.dataService.setSelectedUser(user);
-    alert(JSON.stringify(user));
-      // Cambiar a la otra pantalla
+    this.router.navigate([ '/profile/' + user['login'] ]);
   }
 
 }

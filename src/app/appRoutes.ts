@@ -5,7 +5,7 @@ import { Routes } from '@angular/router';
 
 export const appRoutes: Routes = [
   {
-    path: '',
+    path: 'list',
     component: ListComponent
   },
 
@@ -14,6 +14,8 @@ export const appRoutes: Routes = [
     component: ProfileComponent
   },
 
-  { path: '**', component: ListComponent }
+  { path: '**', 
+    redirectTo: 'list' 
+}
 ];
 
