@@ -2,7 +2,7 @@
   <div class="row search-bar-row">
     <form>
       <div class="form-group">
-        <input type="text" class="form-control" id="search-input" placeholder="Search users"
+        <input type="text" class="form-control" id="search-input" [placeholder]="strings.labelSearchUsers"
         [(ngModel)]="this.searchWord" name="search-field" (ngModelChange)="this.searchUser()">
       </div>
     </form>
@@ -14,7 +14,7 @@
   </div>
   <ng-template #emptyResultsMessage>
     <div class="row">
-      Your search does not match any result, or search field is empty
+      {{strings.messageNoResults}}
     </div>
   </ng-template>
 </div>

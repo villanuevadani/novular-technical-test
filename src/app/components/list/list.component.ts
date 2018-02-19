@@ -3,12 +3,15 @@ import { Router } from '@angular/router';
 
 import { DataService } from './../../services/data.service';
 
+import { Strings } from '../../values/strings';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+  strings = Strings.listComponent;
   searchWord: string;
   filteredUsers = [];
 

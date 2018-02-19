@@ -3,12 +3,15 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 import { DataService } from './../../services/data.service';
 
+import { Strings } from '../../values/strings';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  strings = Strings.profileComponent;
   user;
   userRepos;
   userFollowers;
