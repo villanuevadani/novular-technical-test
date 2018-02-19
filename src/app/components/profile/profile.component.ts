@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
 import { DataService } from './../../services/data.service';
-import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +9,7 @@ import { stringify } from 'querystring';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user: Object;
+  user: Object = null;
   userRepos;
 
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }  
