@@ -1,4 +1,4 @@
 export const APIKeys = {
-    gitHub: '7a06516b89920370702425ef9109d129053e4d3a'
+    gitHub: '6eac418d5160ada71b0836cf0372e85483fa1612'
   };
   
