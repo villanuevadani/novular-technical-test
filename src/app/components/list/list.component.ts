@@ -17,13 +17,16 @@ export class ListComponent implements OnInit {
 
   constructor(private dataService: DataService, private router: Router) { }
 
-  ngOnInit() {
-    this.dataService.loadGitHubUsers();
-  }
+  ngOnInit() {}
 
   searchUser() {
-    if (this.searchWord.length >= 1) {
-      this.filteredUsers = this.dataService.filterUsers(this.searchWord);
+    if (this.searchWord && this.searchWord.length >= 3) {
+      this.dataService.searchUser(this.searchWord).subscribe(
+        response => {
+          this.filteredUsers = response['items'] ? response['items'] : [];
+        }
+      );
+        
     } else {
       this.filteredUsers = [];
     }

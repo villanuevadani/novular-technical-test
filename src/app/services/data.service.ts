@@ -10,12 +10,9 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  loadGitHubUsers() {
-    return this.http.get(Endpoints.gitHubUsers).subscribe(
-      response => {
-        this.usersArray = response;
-      }
-    );
+  searchUser(userName: string){
+    let fullURL = Endpoints.gitHubSearchUsers + encodeURIComponent(userName); 
+    return this.http.get(fullURL);
   }
 
   loadGitHubSpecificUser(userName: string){
@@ -24,15 +21,13 @@ export class DataService {
   }
 
   getUserRepos(userName: string){
-    return this.http.get(Endpoints.gitHubUsers + '/' + userName + Endpoints.userReposKeywords);
+    let fullURL = Endpoints.gitHubUsers + '/' + userName + Endpoints.userReposKeywords;
+    return this.http.get(fullURL);
   }
 
   getUserFollowers(userName: string){
-    return this.http.get(Endpoints.gitHubUsers + '/' + userName + Endpoints.userFollowersKeywords);
-  }
-
-  filterUsers(searchWord) {
-    return this.usersArray.filter(user => user.login.includes(searchWord));
+    let fullURL = Endpoints.gitHubUsers + '/' + userName + Endpoints.userFollowersKeywords;
+    return this.http.get(fullURL);
   }
 
   setSelectedUser(user) {
